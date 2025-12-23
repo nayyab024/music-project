@@ -70,12 +70,12 @@ db.sqlite3-journal
 .env.*.local
 *.env
 
-# Music files (if they're large or generated)
-music/*.mp3
-music/*.wav
-music/*.flac
-music/*.ogg
-music/*.m4a
+# # Music files (if they're large or generated)
+# music/*.mp3
+# music/*.wav
+# music/*.flac
+# music/*.ogg
+# music/*.m4a
 
 # Logs
 *.log
