@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesture Music Player</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 Gesture Music Player</h1>
+            <p class="subtitle">Control music with hand gestures</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Video Feed Section -->
+            <div class="video-section">
+                <div class="video-container">
+                    <img id="videoFeed" src="{{ url_for('video_feed') }}" alt="Camera Feed">
+                </div>
+            </div>
+
+            <!-- Controls and Info Section -->
+            <div class="info-section">
+                <!-- Current Track Info -->
+                <div class="card track-info">
+                    <h2>Now Playing</h2>
+                    <div id="trackName" class="track-name">Loading...</div>
+                    <div id="status" class="status">Stopped</div>
+                    <div id="volume" class="volume-display">Volume: 70%</div>
+                </div>
+
+                <!-- Gesture Guide -->
+                <div class="card gesture-guide">
+                    <h2>Gesture Controls</h2>
+                    <div class="gesture-list">
+                        <div class="gesture-item">
+                            <span class="gesture-icon">✊</span>
+                            <span class="gesture-desc">Fist → Play</span>
+                        </div>
+                        <div class="gesture-item">
+                            <span class="gesture-icon">✋</span>
+                            <span class="gesture-desc">Open Palm → Pause</span>
+                        </div>
+                        <div class="gesture-item">
+                            <span class="gesture-icon">☝️</span>
+                            <span class="gesture-desc">One Finger → Volume Control</span>
+                        </div>
+                        <div class="gesture-item">
+                            <span class="gesture-icon">👈 👉</span>
+                            <span class="gesture-desc">Swipe → Next/Prev Track</span>
+                        </div>
+                        <div class="gesture-item">
+                            <span class="gesture-icon">🤏</span>
+                            <span class="gesture-desc">Pinch → Toggle Favorite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Playlist -->
+                <div class="card playlist">
+                    <h2>Playlist</h2>
+                    <div id="playlistContainer" class="playlist-items">
+                        <p>Loading playlist...</p>
+                    </div>
+                </div>
+
+                <!-- Keyboard Shortcuts -->
+                <div class="card shortcuts">
+                    <h2>Keyboard Shortcuts</h2>
+                    <div class="shortcut-list">
+                        <div class="shortcut-item">
+                            <kbd>Q</kbd> <span>Quit</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>N</kbd> <span>Next Track</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>P</kbd> <span>Previous Track</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Wave your hand in front of the camera to control playback</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
